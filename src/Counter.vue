@@ -17,5 +17,12 @@ export default {
       this.step += 1;
     },
   },
+  watch: {
+    count(val) {
+      if (val === 10) {
+        this.$router.push("/todo-list");
+      }
+    },
+  },
 };
 </script>
