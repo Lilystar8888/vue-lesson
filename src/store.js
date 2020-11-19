@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+// scars
+
 const store = new Vuex.Store({
   state: {
     form: {
@@ -25,7 +27,14 @@ const store = new Vuex.Store({
   actions: {
     setForm(store, payload) {
       store.commit('setForm', payload)
-    }
+    },
+    submitForm(store) {
+      const form = store.getters.form
+      alert(JSON.stringify(form, null, 2))
+      // api.post('/new-policy', { form }).then(() => {
+      //   // 
+      // })
+    },
   }
 });
 
